@@ -8,14 +8,14 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     $Nama_barang = $_POST["Nama_barang"];
     $kategori = $_POST["kategori"];
     $harga = $_POST["harga"];
-    $idbarang = $_GET["idbarang"];
+    $idbarang = $_POST["idbarang"];
     $stok = $_POST["stok"];
     $Tanggal_pengecekan = $_POST["Tanggal_pengecekan"];
     $id = $_GET["id"];
 
     $sql = "UPDATE penjualan SET Nama_barang=?, kategori=?, harga=?, idbarang=?, stok=?, Tanggal_pengecekan=? where id=?";
-    $row = $koneksi->execute_query($sql, [$nama_barang, $kategori, $harga, $idbarang, $stok, $Tanggal_pengecekan]);
-    header("location:barang.php");
+    $row = $koneksi->execute_query($sql, [$Nama_barang, $kategori, $harga, $idbarang, $stok, $Tanggal_pengecekan, $id]);
+    header("location:penjualan.php");
 }
 ?>
 <!DOCTYPE html>
@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     <h1>Edit barang</h1>
     <form action="" method="POST">
         <div class="form-item">
-            <label for="nama_barang">Nama barang</label>
-            <input type="text" name="nama" id="nama" value="<?= htmlspecialchars($row['Nama_barang']) ?>">
+            <label for="Nama_barang">Nama barang</label>
+            <input type="text" name="Nama_barang" id="Nama_barang" value="<?= htmlspecialchars($row['Nama_barang']) ?>">
         </div>
         <label for="kategori">kategori</label>
         <select name="kategori" id="kategori">
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         </div>
         <div class="form-item">
             <label for="idbarang">idbarang</label>
-            <input type="text" name="idbarang" id="idbarang" value="<?= htmlspecialchars($row['idbarang']) ?>">
+            <input type="char" name="idbarang" id="idbarang" value="<?= htmlspecialchars($row['idbarang']) ?>">
         </div>
         <div class="form-item">
             <label for="stok">stok</label>
