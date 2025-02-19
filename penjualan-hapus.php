@@ -1,6 +1,8 @@
 <?php
 session_start();
 require "koneksi.php";
+require "BarangModel.php";
+$BarangModel = new BarangModel($koneksi);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $id = $_GET['id'];

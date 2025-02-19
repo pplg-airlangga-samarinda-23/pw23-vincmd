@@ -1,0 +1,6 @@
+menurut saya yang lebih mudah dipahami yang refactoring ini,
+karena kalau saya melihat yang pertama saya jujur agak pusing karena tergabung-gabung filenya,
+jadi kalau misalnya nyari error agak pusing karena harus
+ menjelajahi kode yang banyak.Dengan adanya refactoring ini lebih gampang,misalnya salah
+di functionnya langsung buka phpnya kalau ada salah di htmlnya 
+buka htmlnya trus juga lebih rapi dan juga lebih enak dipandang.
